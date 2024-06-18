@@ -14,8 +14,14 @@ service AssetService
   // 리스트
   rpc list (google.protobuf.Empty) returns (stream AssetSheet);
 
+  // 리스트
+  rpc fetchList (google.protobuf.Empty) returns (AssetSheets);
+
   // 쿼리
   rpc query (AssetQueryRequest) returns (stream google.protobuf.Any);
+
+  // 쿼리
+  rpc fetchQuery (AssetQueryRequest) returns (AssetQueryResponse);
 }
 
 message AssetSheet
@@ -28,8 +34,19 @@ message AssetSheet
   repeated string partition = 6;
 }
 
+message AssetSheets
+{
+  repeated AssetSheet sheet = 1;
+}
+
 // 쿼리 요청
 message AssetQueryRequest
 {
   string query = 1;
+}
+
+// 쿼리 응듭
+message AssetQueryResponse
+{
+  repeated google.protobuf.Any result = 1;
 }
