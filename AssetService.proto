@@ -45,7 +45,7 @@ message AssetQueryRequest
   string query = 1;
 }
 
-// 쿼리 응듭
+// 쿼리 응답
 message AssetQueryResponse
 {
   repeated google.protobuf.Any result = 1;
