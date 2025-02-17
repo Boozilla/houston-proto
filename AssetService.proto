@@ -24,6 +24,7 @@ service AssetService
   rpc fetchQuery (AssetQueryRequest) returns (AssetQueryResponse);
 }
 
+// 애셋 시트
 message AssetSheet
 {
   int64 size = 1;
@@ -34,6 +35,7 @@ message AssetSheet
   repeated string partition = 6;
 }
 
+// 애셋 시트
 message AssetSheets
 {
   repeated AssetSheet sheet = 1;
